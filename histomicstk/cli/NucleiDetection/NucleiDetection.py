@@ -88,11 +88,9 @@ def main(args):
     if not os.path.isfile(args.inputImageFile):
         print(args.inputImageFile)
         f = args.inputImageFile.split('/')
-        f.pop()
-        f = [ e+'/' for e in f]
-        d = ''.join(f)
-        print(d)
-        print(os.path.isdir(d))
+        print(os.listdir(f"/{f[0]}"))
+        print(os.listdir(f"/{f[0]}/{f[1]}"))
+        print(os.listdir(f"/{f[0]}/{f[1]}/{f[2]}"))
         raise OSError('Input image file does not exist.')
 
     if len(args.reference_mu_lab) != 3:
