@@ -86,6 +86,12 @@ def main(args):
     print(args)
 
     if not os.path.isfile(args.inputImageFile):
+        print(args.inputImageFile)
+        f = args.inputImageFile.split('/')
+        f.pop()
+        d = ''.join(f)
+        print(d)
+        os.path.isdir(d)
         raise OSError('Input image file does not exist.')
 
     if len(args.reference_mu_lab) != 3:
